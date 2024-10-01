@@ -1,0 +1,89 @@
+{
+  "Password": "",
+  "Validdate": "2024/09/28",
+  "meshModifiers": [
+    {
+      "meshModifierId": "#7930_Outsole_LB273 MEGAGRIP BR5A 69A 117",
+      "selectedVertexIndices": [],
+      "slider": 0.0
+    },
+    {
+      "meshModifierId": "#7930_Outsole_LB273 MEGAGRIP BR5A 69A 117_3",
+      "selectedVertexIndices": [],
+      "slider": 0.0
+    },
+    {
+      "meshModifierId": "LACE",
+      "selectedVertexIndices": [],
+      "slider": 0.0
+    },
+    {
+      "meshModifierId": "TONGUE_BOTTOM",
+      "selectedVertexIndices": [],
+      "slider": 0.0
+    },
+    {
+      "meshModifierId": "COLLAR_KT",
+      "selectedVertexIndices": [],
+      "slider": 0.0
+    },
+    {
+      "meshModifierId": "UPPER_THREAD",
+      "selectedVertexIndices": [],
+      "slider": 0.0
+    },
+    {
+      "meshModifierId": "INSOLE",
+      "selectedVertexIndices": [],
+      "slider": 0.0
+    },
+    {
+      "meshModifierId": "MIDSOLE_HIGH",
+      "selectedVertexIndices": [],
+      "slider": 0.0
+    },
+    {
+      "meshModifierId": "MIDSOLE_HIGH_TOP_FACES",
+      "selectedVertexIndices": [],
+      "slider": 0.0
+    },
+    {
+      "meshModifierId": "MIDSOLE_LOW",
+      "selectedVertexIndices": [],
+      "slider": 0.0
+    },
+    {
+      "meshModifierId": "MIDSOLE_MEDIAL",
+      "selectedVertexIndices": [],
+      "slider": 0.0
+    },
+    {
+      "meshModifierId": "VAMP_OUTSIDE_16_2.png",
+      "selectedVertexIndices": [
+        1884,
+        1881,
+        1843,
+        1841,
+        1840,
+        1898,
+        651,
+        1901,
+        1906,
+        1915,
+        665,
+        3102,
+        1919,
+        1891,
+        1889,
+        615,
+        1950,
+        1958,
+        1956,
+        597,
+        1959,
+        1961
+      ],
+      "slider": 0.009999999776482582
+    }
+  ]
+}
