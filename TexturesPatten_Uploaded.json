@@ -1,0 +1,88 @@
+{
+  "info": {
+    "year": "2024",
+    "version": "1",
+    "url": "http://localhost/ShoesDesign/SYLAN Base UV_Pack",
+    "user": "設計師 A",
+    "brand": "ARC'TERYX",
+    "profile": "ARC'TERYX.png",
+    "project": "Project A-1",
+    "date_created": ""
+  },
+  "shoes_model": [
+    {
+      "model_name": "SYLAN2",
+      "uv_base": {
+        "id": 0,
+        "file_name": "DesignerSample.jpg",
+        "height": 2048,
+        "width": 2048
+      },
+      "height_map": [
+        {
+          "id": 0,
+          "part": "LACE",
+          "file_name": "null",
+          "height": 2048,
+          "width": 2048
+        },
+        {
+          "id": 1,
+          "part": "TONGUE_BOTTOM",
+          "file_name": "null",
+          "height": 2048,
+          "width": 2048
+        },
+        {
+          "id": 2,
+          "part": "COLLAR_KT",
+          "file_name": "null",
+          "height": 2048,
+          "width": 2048
+        },
+        {
+          "id": 3,
+          "part": "UPPER_THREAD",
+          "file_name": "null",
+          "height": 2048,
+          "width": 2048
+        },
+        {
+          "id": 5,
+          "part": "MIDSOLE_HIGH",
+          "file_name": "null",
+          "height": 2048,
+          "width": 2048
+        },
+        {
+          "id": 6,
+          "part": "MIDSOLE_HIGH_TOP_FACES",
+          "file_name": "null",
+          "height": 2048,
+          "width": 2048
+        },
+        {
+          "id": 7,
+          "part": "MIDSOLE_LOW",
+          "file_name": "null",
+          "height": 2048,
+          "width": 2048
+        },
+        {
+          "id": 8,
+          "part": "MIDSOLE_MEDIAL",
+          "file_name": "null",
+          "height": 2048,
+          "width": 2048
+        },
+        {
+          "id": 9,
+          "part": "VAMP_OUTSIDE",
+          "file_name": "",
+          "height": 2048,
+          "width": 2048
+        }
+      ]
+    }
+  ]
+}
