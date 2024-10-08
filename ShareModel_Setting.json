@@ -1,0 +1,86 @@
+{
+  "Password": "",
+  "Validdate": "",
+  "meshModifiers": [
+    {
+      "meshModifierId": "LACE",
+      "selectedVertexIndices": [],
+      "slider": 0.0
+    },
+    {
+      "meshModifierId": "TONGUE_BOTTOM",
+      "selectedVertexIndices": [],
+      "slider": 0.0
+    },
+    {
+      "meshModifierId": "COLLAR_KT",
+      "selectedVertexIndices": [],
+      "slider": 0.0
+    },
+    {
+      "meshModifierId": "UPPER_THREAD",
+      "selectedVertexIndices": [],
+      "slider": 0.0
+    },
+    {
+      "meshModifierId": "#7930_Outsole_LB273 MEGAGRIP BR5A 69A 117",
+      "selectedVertexIndices": [],
+      "slider": 0.0
+    },
+    {
+      "meshModifierId": "#7930_Outsole_LB273 MEGAGRIP BR5A 69A 117_3",
+      "selectedVertexIndices": [],
+      "slider": 0.0
+    },
+    {
+      "meshModifierId": "INSOLE",
+      "selectedVertexIndices": [],
+      "slider": 0.0
+    },
+    {
+      "meshModifierId": "MIDSOLE_HIGH",
+      "selectedVertexIndices": [],
+      "slider": 0.0
+    },
+    {
+      "meshModifierId": "MIDSOLE_HIGH_TOP_FACES",
+      "selectedVertexIndices": [],
+      "slider": 0.0
+    },
+    {
+      "meshModifierId": "MIDSOLE_LOW",
+      "selectedVertexIndices": [],
+      "slider": 0.0
+    },
+    {
+      "meshModifierId": "MIDSOLE_MEDIAL",
+      "selectedVertexIndices": [],
+      "slider": 0.0
+    },
+    {
+      "meshModifierId": "VAMP_OUTSIDE",
+      "selectedVertexIndices": [
+        2801,
+        2793,
+        2754,
+        956,
+        2796,
+        2752,
+        931,
+        2751,
+        2810,
+        2142,
+        2128,
+        2120,
+        2113,
+        890,
+        2109,
+        2114,
+        876,
+        2110,
+        2108
+      ],
+      "slider": 0.009999999776482582
+    }
+  ]
+}

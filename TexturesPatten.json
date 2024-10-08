@@ -11,7 +11,7 @@
   },
   "shoes_model": [
     {
-      "model_name": "SYLAN2",
+      "model_name": "SYLAN1",
       "uv_base": {
         "id": 0,
         "file_name": "null",
@@ -48,6 +48,13 @@
           "width": 2048
         },
         {
+          "id": 4,
+          "part": "INSOLE",
+          "file_name": "null",
+          "height": 2048,
+          "width": 2048
+        },
+        {
           "id": 5,
           "part": "MIDSOLE_HIGH",
           "file_name": "null",
@@ -78,7 +85,7 @@
         {
           "id": 9,
           "part": "VAMP_OUTSIDE",
-          "file_name": "1.png",
+          "file_name": "null",
           "height": 2048,
           "width": 2048
         }
