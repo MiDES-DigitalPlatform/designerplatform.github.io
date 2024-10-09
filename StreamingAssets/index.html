@@ -21,8 +21,7 @@
     </div>
 <script type="text/javascript">
     var unityInstance = null;
-
-function openFileDialogUV() {
+function openFileDialogSingle() {
     if (unityInstance != null) {
         var input = document.createElement('input');
         input.type = 'file';
@@ -37,13 +36,12 @@ function openFileDialogUV() {
                         var result = e.target.result;
                         var base64Data = result.split(',')[1];
                         if (base64Data) {
-                            // 發送到 Unity，使用 UploadResult 函數
-                            window.unityInstance.SendMessage('Canvas', 'UploadResult', base64Data);
+                            window.unityInstance.SendMessage('Canvas', 'UploadResult', JSON.stringify({ image: base64Data, name: file.name }));
                         } else {
                             window.unityInstance.SendMessage('Canvas', 'UploadResult', 'error');
                         }
                     };
-                    reader.readAsDataURL(file); // 讀取文件為 base64
+                    reader.readAsDataURL(file);
                 } else {
                     window.unityInstance.SendMessage('Canvas', 'UploadResult', 'error');
                 }
@@ -57,8 +55,7 @@ function openFileDialogUV() {
     }
 }
 
-
-function openFileDialogHeightMap() {
+function openFileDialogMultiple() {
     if (unityInstance != null) {
         var input = document.createElement('input');
         input.type = 'file';
@@ -67,6 +64,12 @@ function openFileDialogHeightMap() {
         input.onchange = function (event) {
             var files = event.target.files; 
             var base64Images = [];
+            var fileNames = [];
+            if (files.length > 3) {
+                alert('Height Map最多只允許使用3張圖片。');
+                window.unityInstance.SendMessage('Canvas', 'UploadResult', 'error');
+                return;
+            }
 
             if (files.length > 0) {
                 var validTypes = ['image/jpeg', 'image/png'];
@@ -81,6 +84,7 @@ function openFileDialogHeightMap() {
                                 var base64Data = result.split(',')[1];
                                 if (base64Data) {
                                     base64Images.push(base64Data);
+                                    fileNames.push(file.name); // 存储文件名
                                     resolve();
                                 } else {
                                     reject('Base64 data conversion failed');
@@ -92,7 +96,7 @@ function openFileDialogHeightMap() {
 
                     Promise.all(readerPromises)
                         .then(() => {
-                            window.unityInstance.SendMessage('Canvas', 'UploadMultipleResults', JSON.stringify({ images: base64Images }));
+                            window.unityInstance.SendMessage('Canvas', 'UploadMultipleResults', JSON.stringify({ images: base64Images, names: fileNames }));
                         })
                         .catch(err => {
                             console.error(err);
@@ -109,9 +113,7 @@ function openFileDialogHeightMap() {
     } else {
         console.log("openFileDialog called but no unityInstance");
     }
-}
-
-    function DownloadFile(filename, base64Content) {
+}    function DownloadFile(filename, base64Content) {
         var element = document.createElement('a');
         element.setAttribute('href', 'data:application/zip;base64,' + base64Content);
         element.setAttribute('download', filename);
@@ -164,9 +166,9 @@ function shareObject(url) {
       var buildUrl = "Build";
       var loaderUrl = buildUrl + "/bb0d9ecdb05db3e84da20bd14a4f84dc.loader.js";
       var config = {
-        dataUrl: buildUrl + "/05bd721dcbc6dcf0f702f02f02b04193.data",
-        frameworkUrl: buildUrl + "/be4ec8df64abd4f7a608e44ba19e23fd.framework.js",
-        codeUrl: buildUrl + "/58703897dd545402b71605749a2cc164.wasm",
+        dataUrl: buildUrl + "/e68c4955c736801f0f077a781e14818c.data",
+        frameworkUrl: buildUrl + "/00377141acbccf5122dc44de38594e59.framework.js",
+        codeUrl: buildUrl + "/67cf7b78bd8f5a0e94c30db1fd6234b1.wasm",
         streamingAssetsUrl: "StreamingAssets",
         companyName: "MiDES",
         productName: "DesignerKit",
@@ -193,16 +195,17 @@ function shareObject(url) {
 
       var script = document.createElement("script");
       script.src = loaderUrl;
-      script.onload = () => {
-        createUnityInstance(canvas, config, (progress) => {
-          progressBarFull.style.width = 100 * progress + "%";
-        }).then((unityInstance) => {
-          loadingBar.style.display = "none";
-        window.unityInstance = unityInstance;
-        }).catch((message) => {
-          alert(message);
-        });
-      };
+script.onload = () => {
+   createUnityInstance(canvas, config, (progress) => {
+     progressBarFull.style.width = 100 * progress + "%";
+   }).then((unityInstance) => {
+     loadingBar.style.display = "none";
+     window.unityInstance = unityInstance;
+   }).catch((message) => {
+     alert(message);
+   });
+ };
+console.log("Unity instance:", unityInstance);
       document.body.appendChild(script);
 
     </script>

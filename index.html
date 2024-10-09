@@ -36,13 +36,12 @@ function openFileDialogSingle() {
                         var result = e.target.result;
                         var base64Data = result.split(',')[1];
                         if (base64Data) {
-                            // 发送到 Unity，使用 UploadResult 函数，包含文件名
                             window.unityInstance.SendMessage('Canvas', 'UploadResult', JSON.stringify({ image: base64Data, name: file.name }));
                         } else {
                             window.unityInstance.SendMessage('Canvas', 'UploadResult', 'error');
                         }
                     };
-                    reader.readAsDataURL(file); // 读取文件为 base64
+                    reader.readAsDataURL(file);
                 } else {
                     window.unityInstance.SendMessage('Canvas', 'UploadResult', 'error');
                 }
@@ -65,7 +64,12 @@ function openFileDialogMultiple() {
         input.onchange = function (event) {
             var files = event.target.files; 
             var base64Images = [];
-            var fileNames = []; // 存储文件名
+            var fileNames = [];
+            if (files.length > 3) {
+                alert('Height Map最多只允許使用3張圖片。');
+                window.unityInstance.SendMessage('Canvas', 'UploadResult', 'error');
+                return;
+            }
 
             if (files.length > 0) {
                 var validTypes = ['image/jpeg', 'image/png'];
@@ -92,7 +96,7 @@ function openFileDialogMultiple() {
 
                     Promise.all(readerPromises)
                         .then(() => {
-                       window.unityInstance.SendMessage('Canvas', 'UploadMultipleResults', JSON.stringify({ images: base64Images, names: fileNames }));
+                            window.unityInstance.SendMessage('Canvas', 'UploadMultipleResults', JSON.stringify({ images: base64Images, names: fileNames }));
                         })
                         .catch(err => {
                             console.error(err);
@@ -109,8 +113,7 @@ function openFileDialogMultiple() {
     } else {
         console.log("openFileDialog called but no unityInstance");
     }
-}
-    function DownloadFile(filename, base64Content) {
+}    function DownloadFile(filename, base64Content) {
         var element = document.createElement('a');
         element.setAttribute('href', 'data:application/zip;base64,' + base64Content);
         element.setAttribute('download', filename);
@@ -163,9 +166,9 @@ function shareObject(url) {
       var buildUrl = "Build";
       var loaderUrl = buildUrl + "/bb0d9ecdb05db3e84da20bd14a4f84dc.loader.js";
       var config = {
-        dataUrl: buildUrl + "/835f4053d0c0c1c701676ebff94b5a9e.data",
-        frameworkUrl: buildUrl + "/2d8b9f7c4955c40b3feb07bed54351f3.framework.js",
-        codeUrl: buildUrl + "/11092781158e00b70d1a808f157792b2.wasm",
+        dataUrl: buildUrl + "/80102eb5a4fba7289e86fa8350cf8a1a.data",
+        frameworkUrl: buildUrl + "/dfbbd71edd7576e4998f2e472a1b7786.framework.js",
+        codeUrl: buildUrl + "/00b34b3e663ff98dcf9a0a781879d543.wasm",
         streamingAssetsUrl: "StreamingAssets",
         companyName: "MiDES",
         productName: "DesignerKit",
