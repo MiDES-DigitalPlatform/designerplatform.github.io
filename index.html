@@ -135,6 +135,14 @@ function shareObject(url) {
         console.log('Error: Sharing is not supported on this browser.');
     }
 }
+    function openDatePicker() {
+        document.getElementById('datePicker').click();
+    }
+
+    function sendDateToUnity() {
+        var selectedDate = document.getElementById('datePicker').value;
+        gameInstance.SendMessage('Share Setting', 'OnDateSelected', selectedDate);
+    }
   </script>
   <script type="text/javascript">
     // Unity WebGL initialization
@@ -166,9 +174,9 @@ function shareObject(url) {
       var buildUrl = "Build";
       var loaderUrl = buildUrl + "/bb0d9ecdb05db3e84da20bd14a4f84dc.loader.js";
       var config = {
-        dataUrl: buildUrl + "/73612c7637524a5fc1ca657ec74b6cd7.data",
-        frameworkUrl: buildUrl + "/7ab9dd99139112f016f9ef1beef5cdf3.framework.js",
-        codeUrl: buildUrl + "/16eaa55145660afe716580e35f2d0cef.wasm",
+        dataUrl: buildUrl + "/dd98eaae7f82b28e5c5fae70e5dd6bfb.data",
+        frameworkUrl: buildUrl + "/dfbbd71edd7576e4998f2e472a1b7786.framework.js",
+        codeUrl: buildUrl + "/ed0ba5fbc53845012805260d6765b276.wasm",
         streamingAssetsUrl: "StreamingAssets",
         companyName: "MiDES",
         productName: "DesignerKit",
