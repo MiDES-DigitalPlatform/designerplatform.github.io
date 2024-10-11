@@ -6,7 +6,7 @@
     "user": "設計師 A",
     "brand": "ARC'TERYX",
     "profile": "ARC'TERYX.png",
-    "project": "Project A-1",
+    "project": "Project",
     "date_created": ""
   },
   "shoes_model": [
@@ -14,7 +14,7 @@
       "model_name": "SYLAN1",
       "uv_base": {
         "id": 0,
-        "file_name": "BaseUV_SYLAN_0830.jpg",
+        "file_name": "null",
         "height": 2048,
         "width": 2048
       },
