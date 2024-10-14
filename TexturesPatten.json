@@ -14,7 +14,7 @@
       "model_name": "SYLAN1",
       "uv_base": {
         "id": 0,
-        "file_name": "null",
+        "file_name": "BaseUV_SYLAN_0923.png",
         "height": 2048,
         "width": 2048
       },
@@ -85,7 +85,7 @@
         {
           "id": 9,
           "part": "VAMP_OUTSIDE",
-          "file_name": "null",
+          "file_name": "VAMP_OUTSIDE_16_1.png|VAMP_OUTSIDE_16_2.png|VAMP_OUTSIDE_16_3.png",
           "height": 2048,
           "width": 2048
         }
