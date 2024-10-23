@@ -2,7 +2,7 @@ const cacheName = "MiDES-DesignerKit-0.1.0";
 const contentToCache = [
     "Build/bb0d9ecdb05db3e84da20bd14a4f84dc.loader.js",
     "Build/b7de5e37247e05d02d5a2e66f6ac7567.framework.js",
-    "Build/85fee19ce4ec398718e2a0d520dffee4.data",
+    "Build/4e0de2f010c77376122439a4e9b0cc69.data",
     "Build/f6915f824adb865d83335faca2ef23d0.wasm",
     "TemplateData/style.css"
 
