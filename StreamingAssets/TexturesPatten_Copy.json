@@ -1,0 +1,218 @@
+{
+  "info": {
+    "year": 2024,
+    "version": 1.0,
+    "url": "http://localhost/ShoesDesign/SYLAN Base UV_Pack",
+    "user": "Designer A",
+    "brand": "ARC'TERYX",
+    "profile": "ARC'TERYX.png",
+    "project": "Project",
+    "date_created": ""
+  },
+  "shoes_model": [
+    {
+      "model_name": "SYLAN PRO",
+      "uv_base": {
+        "id": "0",
+        "file_name": "null",
+        "height": 2048,
+        "width": 2048
+      },
+      "height_map": [
+        {
+          "id": "0",
+          "part": "LACE",
+          "file_name": "null",
+          "height": 2048,
+          "width": 2048
+        },
+        {
+          "id": "1",
+          "part": "TONGUE_BOTTOM",
+          "file_name": "null",
+          "height": 2048,
+          "width": 2048
+        },
+        {
+          "id": "2",
+          "part": "COLLAR_KT",
+          "file_name": "null",
+          "height": 2048,
+          "width": 2048
+        },
+        {
+          "id": "3",
+          "part": "UPPER_THREAD",
+          "file_name": "null",
+          "height": 2048,
+          "width": 2048
+        },
+        {
+          "id": "4",
+          "part": "INSOLE",
+          "file_name": "null",
+          "height": 2048,
+          "width": 2048
+        },
+        {
+          "id": "5",
+          "part": "MIDSOLE_HIGH",
+          "file_name": "null",
+          "height": 2048,
+          "width": 2048
+        },
+        {
+          "id": "6",
+          "part": "MIDSOLE_HIGH_TOP_FACES",
+          "file_name": "null",
+          "height": 2048,
+          "width": 2048
+        },
+        {
+          "id": "7",
+          "part": "MIDSOLE_LOW",
+          "file_name": "null",
+          "height": 2048,
+          "width": 2048
+        },
+        {
+          "id": "8",
+          "part": "MIDSOLE_MEDIAL",
+          "file_name": "null",
+          "height": 2048,
+          "width": 2048
+        },
+        {
+          "id": "9",
+          "part": "VAMP_OUTSIDE",
+          "file_name": "null",
+          "height": 2048,
+          "width": 2048
+        }
+      ]
+    },
+    {
+      "model_name": "KONSEAL",
+      "uv_base": {
+        "id": "0",
+        "file_name": "null",
+        "height": 2048,
+        "width": 2048
+      },
+      "height_map": [
+        {
+          "id": "0",
+          "part": "Eyelet",
+          "file_name": "null",
+          "height": 2048,
+          "width": 2048
+        },
+        {
+          "id": "1",
+          "part": "Eyestay Loops",
+          "file_name": "null",
+          "height": 2048,
+          "width": 2048
+        },
+        {
+          "id": "2",
+          "part": "Eyestay Loops Base",
+          "file_name": "null",
+          "height": 2048,
+          "width": 2048
+        },
+        {
+          "id": "3",
+          "part": "Eyestay Loops stitching",
+          "file_name": "null",
+          "height": 2048,
+          "width": 2048
+        },
+        {
+          "id": "4",
+          "part": "Heel Lining",
+          "file_name": "null",
+          "height": 2048,
+          "width": 2048
+        },
+        {
+          "id": "5",
+          "part": "Heel Pulltab",
+          "file_name": "null",
+          "height": 2048,
+          "width": 2048
+        },
+        {
+          "id": "6",
+          "part": "Lace",
+          "file_name": "null",
+          "height": 2048,
+          "width": 2048
+        },
+        {
+          "id": "7",
+          "part": "MIDSOLE",
+          "file_name": "null",
+          "height": 2048,
+          "width": 2048
+        },
+        {
+          "id": "8",
+          "part": "OUTSOLE",
+          "file_name": "null",
+          "height": 2048,
+          "width": 2048
+        },
+        {
+          "id": "9",
+          "part": "Sockliner cover",
+          "file_name": "null",
+          "height": 2048,
+          "width": 2048
+        },
+        {
+          "id": "10",
+          "part": "Toe Cap",
+          "file_name": "null",
+          "height": 2048,
+          "width": 2048
+        },
+        {
+          "id": "11",
+          "part": "Tongue",
+          "file_name": "null",
+          "height": 2048,
+          "width": 2048
+        },
+        {
+          "id": "12",
+          "part": "Tongue Lining",
+          "file_name": "null",
+          "height": 2048,
+          "width": 2048
+        },
+        {
+          "id": "13",
+          "part": "Upper Thread",
+          "file_name": "null",
+          "height": 2048,
+          "width": 2048
+        },
+        {
+          "id": "14",
+          "part": "VAMP",
+          "file_name": "null",
+          "height": 2048,
+          "width": 2048
+        },
+        {
+          "id": "15",
+          "part": "VAMP LINING",
+          "file_name": "null",
+          "height": 2048,
+          "width": 2048
+        }
+      ]
+    }
+  ]
+}
