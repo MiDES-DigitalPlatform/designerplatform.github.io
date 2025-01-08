@@ -126,13 +126,30 @@
             document.body.removeChild(element);
         }
         function shareObject(url) {
+            if (!url) {
+                console.error('Error: URL is required for sharing.');
+                alert('Unable to share: No URL provided.');
+                return;
+            }
+
             if (navigator.share) {
                 navigator.share({
                     title: 'Check out this 3D object!',
                     url: url
-                }).catch((error) => console.log('Error sharing:', error));
+                }).catch((error) => {
+                    console.error('Error sharing:', error);
+                    alert('Something went wrong while sharing. Please try again.');
+                });
+            } else if (navigator.clipboard && navigator.clipboard.writeText) {
+                navigator.clipboard.writeText(url).then(() => {
+                    alert('The link has been copied to your clipboard! You can share it manually.');
+                }).catch((error) => {
+                    console.error('Clipboard copy failed:', error);
+                    alert('Unable to copy the link. Please copy it manually:\n' + url);
+                });
             } else {
-                console.log('Error: Sharing is not supported on this browser.');
+                alert('Sharing is not supported on this browser. Please manually copy this link:\n' + url);
+                console.log('Error: Sharing and clipboard copying are not supported.');
             }
         }
         function openDatePicker() {
@@ -174,9 +191,9 @@
         var buildUrl = "Build";
         var loaderUrl = buildUrl + "/bb0d9ecdb05db3e84da20bd14a4f84dc.loader.js";
         var config = {
-            dataUrl: buildUrl + "/f40e81970c3d46809f9dfe1939644885.data",
-            frameworkUrl: buildUrl + "/97c27150cc56c2b88004641109ef6dc3.framework.js",
-            codeUrl: buildUrl + "/2807596bb63c45c18a5ee3fce4c0be9a.wasm",
+            dataUrl: buildUrl + "/1e3e6346f4f8f234fc13077024c4908f.data",
+            frameworkUrl: buildUrl + "/30fa12d1a9d07e4ec4dba7170decd031.framework.js",
+            codeUrl: buildUrl + "/b50635b80f5d9964c39bdadf6643e37e.wasm",
             streamingAssetsUrl: "StreamingAssets",
             companyName: "MiDES",
             productName: "DesignerKit",
