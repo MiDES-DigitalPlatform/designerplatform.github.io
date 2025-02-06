@@ -29,6 +29,14 @@
                 input.onchange = function (event) {
                     var file = event.target.files[0];
                     if (file) {
+                        if (file.size > 5242880) {
+                            window.unityInstance.SendMessage('UIAPI_Upload', 'Upload_Error');
+                            return;
+                        }
+                        if (!/^[a-zA-Z0-9._\s()-]+$/.test(file.name)) {
+                            window.unityInstance.SendMessage('UIAPI_Upload', 'Upload_Error');
+                            return;
+                        }
                         var validTypes = ['image/jpeg', 'image/png'];
                         if (validTypes.includes(file.type)) {
                             var reader = new FileReader();
@@ -36,17 +44,17 @@
                                 var result = e.target.result;
                                 var base64Data = result.split(',')[1];
                                 if (base64Data) {
-                                    window.unityInstance.SendMessage('Canvas', 'UploadResult', JSON.stringify({ image: base64Data, name: file.name }));
+                                    window.unityInstance.SendMessage('UIAPI_Upload', 'UploadResult', JSON.stringify({ image: base64Data, name: file.name }));
                                 } else {
-                                    window.unityInstance.SendMessage('Canvas', 'UploadResult', 'error');
+                                    window.unityInstance.SendMessage('UIAPI_Upload', 'Upload_Error');
                                 }
                             };
                             reader.readAsDataURL(file);
                         } else {
-                            window.unityInstance.SendMessage('Canvas', 'UploadResult', 'error');
+                            window.unityInstance.SendMessage('UIAPI_Upload', 'Upload_Error');
                         }
                     } else {
-                        window.unityInstance.SendMessage('Canvas', 'UploadResult', 'error');
+                        window.unityInstance.SendMessage('UIAPI_Upload', 'Upload_Error');
                     }
                 };
                 input.click();
@@ -66,14 +74,24 @@
                     var base64Images = [];
                     var fileNames = [];
                     if (files.length > 3) {
-                        alert('Height Map最多只允許使用3張圖片。');
-                        window.unityInstance.SendMessage('Canvas', 'UploadResult', 'error');
+                        window.unityInstance.SendMessage('UIAPI_Upload', 'Upload_Error');
                         return;
                     }
 
                     if (files.length > 0) {
                         var validTypes = ['image/jpeg', 'image/png'];
                         var validFiles = Array.from(files).filter(file => validTypes.includes(file.type));
+
+                        for (var i = 0; i < validFiles.length; i++) {
+                            if (validFiles[i].size > 5242880) {
+                                window.unityInstance.SendMessage('UIAPI_Upload', 'Upload_Error');
+                                return;
+                            }
+                            if (!/^[a-zA-Z0-9._\s()-]+$/.test(validFiles[i].name)) {
+                                window.unityInstance.SendMessage('UIAPI_Upload', 'Upload_Error');
+                                return;
+                            }
+                        }
 
                         if (validFiles.length > 0) {
                             var readerPromises = validFiles.map(file => {
@@ -84,7 +102,7 @@
                                         var base64Data = result.split(',')[1];
                                         if (base64Data) {
                                             base64Images.push(base64Data);
-                                            fileNames.push(file.name); // 存储文件名
+                                            fileNames.push(file.name);
                                             resolve();
                                         } else {
                                             reject('Base64 data conversion failed');
@@ -96,24 +114,25 @@
 
                             Promise.all(readerPromises)
                                 .then(() => {
-                                    window.unityInstance.SendMessage('Canvas', 'UploadMultipleResults', JSON.stringify({ images: base64Images, names: fileNames }));
+                                    window.unityInstance.SendMessage('UIAPI_Upload', 'UploadMultipleResults', JSON.stringify({ images: base64Images, names: fileNames }));
                                 })
                                 .catch(err => {
                                     console.error(err);
-                                    window.unityInstance.SendMessage('Canvas', 'UploadResult', 'error');
+                                    window.unityInstance.SendMessage('UIAPI_Upload', 'Upload_Error');
                                 });
                         } else {
-                            window.unityInstance.SendMessage('Canvas', 'UploadResult', 'error');
+                            window.unityInstance.SendMessage('UIAPI_Upload', 'Upload_Error');
                         }
                     } else {
-                        window.unityInstance.SendMessage('Canvas', 'UploadResult', 'error');
+                        window.unityInstance.SendMessage('UIAPI_Upload', 'Upload_Error');
                     }
                 };
                 input.click();
             } else {
                 console.log("openFileDialog called but no unityInstance");
             }
-        } function DownloadFile(filename, base64Content) {
+        }
+        function DownloadFile(filename, base64Content) {
             var element = document.createElement('a');
             element.setAttribute('href', 'data:application/zip;base64,' + base64Content);
             element.setAttribute('download', filename);
@@ -190,9 +209,9 @@
         var buildUrl = "Build";
         var loaderUrl = buildUrl + "/bb0d9ecdb05db3e84da20bd14a4f84dc.loader.js";
         var config = {
-            dataUrl: buildUrl + "/e2b0e436862f853e7639871f9048265c.data",
-            frameworkUrl: buildUrl + "/43bcd8118d1108ae32eb6557b5d729e4.framework.js",
-            codeUrl: buildUrl + "/3feb6dd4eecfd33a4720c0426e115d77.wasm",
+            dataUrl: buildUrl + "/9ed2379d4bb2e4871c874007be2f8c19.data",
+            frameworkUrl: buildUrl + "/72286d70f3df611117f802b26dcb99c1.framework.js",
+            codeUrl: buildUrl + "/fec0cf3c51caf1497a41d31dff626863.wasm",
             streamingAssetsUrl: "StreamingAssets",
             companyName: "MiDES",
             productName: "DesignerKit",
